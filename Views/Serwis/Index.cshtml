@@ -1,0 +1,30 @@
+@model IEnumerable<Serwiss>
+
+<div class="container mt-5">
+    <h2 class="text-center text-primary">Lista serwisów</h2>
+    <div class="text-center mb-4">
+        <a asp-action="Create" class="btn btn-success btn-lg">Dodaj nowy serwis</a>
+    </div>
+
+    <div class="row">
+        @foreach (var modell in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">@modell.Nazwa</h5>
+                        <p class="card-text">@modell.DataZgloszenia</p>
+                        <p class="card-text text-muted">@modell.Opis</p>
+                        <p class="card-text text-muted">@modell.Klient.Imie @modell.Klient.Nazwisko</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a asp-action="Edit" asp-route-id="@modell.Id" class="btn btn-warning btn-sm">Edytuj</a>
+                        <a asp-action="Details" asp-route-id="@modell.Id" class="btn btn-info btn-sm">Szczegóły</a>
+                        <a asp-action="Delete" asp-route-id="@modell.Id" class="btn btn-danger btn-sm">Usuń</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

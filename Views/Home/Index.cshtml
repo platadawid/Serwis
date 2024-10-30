@@ -1,8 +1,34 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Strona Główna";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <div class="jumbotron bg-light p-5 rounded shadow-sm text-center">
+        <h1 class="display-4 text-primary fw-bold">Witamy w Serwisie Komputerowym!</h1>
+        <p class="lead">Oferujemy kompleksowe usługi serwisowe i naprawę sprzętu komputerowego, aby zapewnić Ci najwyższą jakość obsługi.</p>
+        <hr class="my-4">
+        <p class="text-muted">Zarejestruj swoje urządzenia, śledź status naprawy oraz przeglądaj historię serwisów. Nasz zespół specjalistów jest tutaj, aby pomóc!</p>
+        <a class="btn btn-primary btn-lg mt-3" href="/Serwis" role="button">Przeglądaj nasze usługi</a>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-primary fw-bold">Zarządzanie Klientami</h5>
+                    <p class="card-text">Dodaj nowych klientów, przeglądaj szczegóły i edytuj informacje w razie potrzeby.</p>
+                    <a href="/Klient" class="btn btn-outline-primary">Otwórz sekcję klientów</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-primary fw-bold">Zarządzanie Naprawami</h5>
+                    <p class="card-text">Twórz nowe wpisy napraw, monitoruj postęp i archiwizuj historię napraw.</p>
+                    <a href="/Naprawa" class="btn btn-outline-primary">Otwórz sekcję napraw</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

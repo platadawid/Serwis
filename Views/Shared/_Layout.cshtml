@@ -1,49 +1,53 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Serwis</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Serwis.styles.css" asp-append-version="true" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Serwis Komputerowy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Serwis</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">Serwis Komputerowy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light fw-bold" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light fw-bold" href="/Klient">Klienci</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light fw-bold" href="/Naprawa">Naprawy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light fw-bold" href="/Serwis">Serwisy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light fw-bold" href="/Sprzet">Sprzęt</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light fw-bold" href="/Home/Privacy">Polityka prywatności</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        @RenderBody()
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - Serwis - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    <footer class="bg-primary text-white text-center py-3 mt-auto">
+        <p class="mb-0">© 2024 Serwis Komputerowy </p>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

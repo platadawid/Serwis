@@ -1,0 +1,24 @@
+@model IEnumerable<Naprawa>
+
+<h2>Lista Napraw</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Opis</th>
+            <th>Data Naprawy</th>
+            <th>Serwis Naprawy</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var naprawa in Model)
+    {
+        <tr>
+            <td>@naprawa.Opis</td>
+            <td>@naprawa.DataNaprawy</td>
+            <td>@naprawa.Serwis.Nazwa</td>
+        </tr>
+    }
+    </tbody>
+</table>
+<a asp-action="Create" class="btn btn-primary">Dodaj Nową Naprawę</a>
+

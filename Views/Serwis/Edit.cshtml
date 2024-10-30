@@ -1,0 +1,42 @@
+@model Serwiss
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-4 mb-4 bg-white rounded">
+        <h3 class="card-title text-center text-primary">Dodaj nowy serwis</h3>
+        <form asp-action="Edit" class="needs-validation" novalidate>
+            <div class="form-group">
+                <label asp-for="Nazwa" class="form-label font-weight-bold"></label>
+                <input asp-for="Nazwa" class="form-control border-primary" placeholder="Wprowadź nazwe" />
+                <span asp-validation-for="Nazwa" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Opis" class="form-label font-weight-bold"></label>
+                <input asp-for="Opis" class="form-control border-primary" placeholder="Wprowadź opis" />
+                <span asp-validation-for="Opis" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DataZgloszenia" class="form-label font-weight-bold"></label>
+                <input asp-for="DataZgloszenia" type="datetime-local" class="form-control border-primary" placeholder="Wprowadź date" />
+                <span asp-validation-for="DataZgloszenia" class="text-danger"></span>
+            </div>
+
+                <div class="form-group">
+                    <label>Klient</label>
+                    <select asp-for="KlientId" class="form-control" asp-items="ViewBag.Klienci"></select>
+                </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary btn-lg px-5">Dodaj</button>
+                <a asp-action="Index" class="btn btn-secondary btn-lg px-5">Anuluj</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

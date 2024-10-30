@@ -1,0 +1,26 @@
+@model Serwiss
+
+<h2>Usuń Serwis</h2>
+<h3>Czy na pewno chcesz usunąć ten serwis?</h3>
+<div>
+    <h4>Serwis</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Nazwa</dt>
+        <dd class="col-sm-10">@Model.Nazwa</dd>
+
+        <dt class="col-sm-2">Opis</dt>
+        <dd class="col-sm-10">@Model.Opis</dd>
+
+        <dt class="col-sm-2">Data Zgłoszenia</dt>
+        <dd class="col-sm-10">@Model.DataZgloszenia</dd>
+
+        <dt class="col-sm-2">Klient</dt>
+        <dd class="col-sm-10">@Model.Klient.Imie @Model.Klient.Nazwisko</dd>
+    </dl>
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Usuń</button>
+    <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+</form>

@@ -1,0 +1,18 @@
+body[b-53dly4uxaq] {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+}
+
+.navbar[b-53dly4uxaq] {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link:hover[b-53dly4uxaq] {
+  color: #ffc107 !important;
+}
+
+footer[b-53dly4uxaq] {
+  background-color: #0d6efd;
+  color: white;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}

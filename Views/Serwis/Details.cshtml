@@ -1,0 +1,21 @@
+@model Serwiss
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-4 mb-4 bg-white rounded">
+        <h3 class="card-title text-center text-primary">Szczegóły serwisu</h3>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <p><strong>Nazwa:</strong> @Model.Nazwa</p>
+                <p><strong>Opis:</strong> @Model.Opis</p>
+            </div>
+            <div class="col-md-6">
+                <p><strong>Data:</strong> @Model.DataZgloszenia</p>
+                <p><strong>Klient (właściciel):</strong> @Model.Klient.Imie @Model.Klient.Nazwisko</p>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary px-5">Edytuj</a>
+            <a asp-action="Index" class="btn btn-secondary px-5">Powrót</a>
+        </div>
+    </div>
+</div>

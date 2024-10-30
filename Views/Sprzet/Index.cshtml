@@ -1,0 +1,23 @@
+@model IEnumerable<Sprzet>
+
+<h2>Lista Sprzętu</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nazwa</th>
+            <th>Model</th>
+            <th>Gdzie dostępne?</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var sprzet in Model)
+    {
+        <tr>
+            <td>@sprzet.Nazwa</td>
+            <td>@sprzet.Model</td>
+            <td>@sprzet.Serwis.Nazwa</td>
+        </tr>
+    }
+    </tbody>
+</table>
+<a asp-action="Create" class="btn btn-primary">Dodaj Nowy Sprzęt</a>

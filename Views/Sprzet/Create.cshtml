@@ -1,0 +1,35 @@
+@model Sprzet
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-4 mb-4 bg-white rounded">
+        <h3 class="card-title text-center text-primary">Dodaj nowy sprzęt</h3>
+        <form asp-action="Create" class="needs-validation" novalidate>
+            <div class="form-group">
+                <label asp-for="Nazwa" class="form-label font-weight-bold"></label>
+                <input asp-for="Nazwa" class="form-control border-primary" placeholder="Wprowadź nazwę" />
+                <span asp-validation-for="Nazwa" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Model" class="form-label font-weight-bold"></label>
+                <input asp-for="Model" class="form-control border-primary" placeholder="Wprowadź opis" />
+                <span asp-validation-for="Model" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Serwis</label>
+                <select asp-for="SerwisId" class="form-control" asp-items="ViewBag.Serwisy"></select>
+            </div>
+
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary btn-lg px-5">Dodaj</button>
+                <a asp-action="Index" class="btn btn-secondary btn-lg px-5">Anuluj</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

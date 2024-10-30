@@ -1,0 +1,23 @@
+@model IEnumerable<Klient>
+
+<div class="container mt-5">
+    <h2 class="text-center text-primary">Lista klientow</h2>
+    <div class="text-center mb-4">
+        <a asp-action="Create" class="btn btn-success btn-lg">Dodaj nowego klienta</a>
+    </div>
+
+    <div class="row">
+        @foreach (var modell in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">@modell.Imie</h5>
+                        <p class="card-text">@modell.Nazwisko</p>
+                        <p class="card-text text-muted">@modell.Telefon</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
